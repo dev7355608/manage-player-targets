@@ -78,3 +78,7 @@
 #token-hud .control-icon[data-action="target"]>i[class^="fa"]:hover {
     color: var(--color-text-light-1);
 }
+
+.illandril-token-hud-scale--darken-hud-button-bg #token-hud .manage-player-targets.player-list {
+    background: rgba(0, 0, 0, 0.8);
+}

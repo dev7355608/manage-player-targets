@@ -8,3 +8,5 @@
 This module allows the GM to target tokens for their players.
 
 ![demo](demo.gif)
+
+These buttons toggle the target state of all controlled tokens unlike the core target button. This change of behavior allows the GM to target multiple tokens for their players at once.

@@ -51,8 +51,10 @@ Hooks.once("ready", () => {
         const token = this.object;
         const targeted = event.currentTarget.classList.toggle("targeting");
         const user = game.users.get(event.currentTarget.dataset.userId);
+        const tokens = token.controlled ? token.layer.controlled : [token, ...token.layer.controlled];
 
-        token.setTarget(targeted, { user, releaseOthers: false });
+        tokens.forEach(t => t.setTarget(targeted, { user, releaseOthers: false, groupSelection: true }));
+        user.broadcastActivity({ targets: user.targets.ids });
     };
 
     Hooks.on("renderTokenHUD", (hud, html) => {

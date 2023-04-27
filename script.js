@@ -1,10 +1,9 @@
-const MODULE_ID = "manage-player-targets";
-
 Hooks.once("ready", () => {
     if (!game.user.isGM || game.settings.get("core", "noCanvas")) {
         return;
     }
 
+    const MODULE_ID = "manage-player-targets";
     const TARGET_CONTROL_ACTIVE = Symbol(MODULE_ID);
 
     function TokenHUD_bind(wrapped, ...args) {

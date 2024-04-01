@@ -2,8 +2,6 @@
     visibility: hidden;
     position: absolute;
     top: -1px;
-    left: -10px;
-    transform: translate(-100%, 0);
     display: block;
     padding: 0;
     box-sizing: content-box;
@@ -19,7 +17,17 @@
     color: var(--color-text-light-3);
 }
 
-#token-hud .manage-player-targets.player-list.active {
+#token-hud .col.left .manage-player-targets.player-list {
+    left: -10px;
+    transform: translate(-100%, 0);
+}
+
+#token-hud .col.right .manage-player-targets.player-list {
+    right: -10px;
+    transform: translate(100%, 0);
+}
+
+#token-hud .control-icon.active .manage-player-targets.player-list {
     visibility: visible;
 }
 

@@ -1,92 +1,61 @@
-#token-hud .manage-player-targets.player-list {
+#token-hud .manage-player-targets--player-list {
     visibility: hidden;
     position: absolute;
-    top: -1px;
-    display: block;
-    padding: 0;
-    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
     width: auto;
     min-width: 100px;
-    max-width: var(--players-width);
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 15px var(--color-shadow-dark);
-    border: 1px solid var(--color-border-dark-3);
+    max-width: 200px;
+    padding: 3px;
+    gap: 3px;
+    background: var(--color-cool-5-90);
+    box-shadow: 0 0 15px #000;
+    border: 1px solid var(--color-cool-4);
     border-radius: 4px;
     pointer-events: all;
-    font-size: var(--font-size-14);
-    color: var(--color-text-light-3);
 }
 
-#token-hud .col.left .manage-player-targets.player-list {
-    left: -10px;
+#token-hud .col.left .manage-player-targets--player-list {
+    left: -8px;
     transform: translate(-100%, 0);
 }
 
-#token-hud .col.right .manage-player-targets.player-list {
-    right: -10px;
+#token-hud .col.right .manage-player-targets--player-list {
+    right: -8px;
     transform: translate(100%, 0);
 }
 
-#token-hud .control-icon.active .manage-player-targets.player-list {
+#token-hud .manage-player-targets--player-list.active {
     visibility: visible;
 }
 
-#token-hud .manage-player-targets.player {
-    line-height: 20px;
-    margin: 2px;
-    padding: 1px 6px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    opacity: 0.75;
+#token-hud .manage-player-targets--player {
+    --button-text-color: #AAA;
+    --button-text-hover-color: #FFF;
+    --button-background-color: var(--color-cool-5-90);
+    --button-border-color: var(--color-cool-4);
+    box-sizing: border-box;
+    width: 100%;
+    background: transparent;
 }
 
-#token-hud .manage-player-targets.player:hover {
-    color: var(--color-text-light-1);
-    opacity: 1;
+#token-hud .manage-player-targets--player.active {
+    box-shadow: unset;
 }
 
-#token-hud .manage-player-targets.player.targeting {
-    border: 1px solid var(--color-border-highlight);
-    opacity: 1;
+#token-hud .manage-player-targets--player::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: var(--font-size-12);
+    height: var(--font-size-12);
+    background: var(--player-color);
+    border: 1px solid var(--player-border);
+    border-radius: 100%;
 }
 
-#token-hud .manage-player-targets.player-pip {
-    flex: 0 0 8px;
-    height: 8px;
-    border: 1px solid var(--color-border-dark);
-    border-radius: 50%;
-    margin: 5px 6px 0 0;
-    box-shadow: 0 0 5px var(--color-shadow-dark);
-}
-
-#token-hud .manage-player-targets.player-name {
+#token-hud .manage-player-targets--player-name {
     flex: 1;
     text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    word-break: break-all;
-    padding-right: 14px;
-}
-
-#token-hud .control-icon[data-action="target"] {
-    position: relative;
-}
-
-#token-hud .control-icon[data-action="target"]>i[class^="fa"] {
-    display: block;
-    width: 36px;
-    height: 36px;
-    margin: 2px;
-    top: 0;
-    padding: 0;
-    line-height: 36px;
-    color: var(--color-text-light-3);
-}
-
-#token-hud .control-icon[data-action="target"]>i[class^="fa"]:hover {
-    color: var(--color-text-light-1);
-}
-
-.illandril-token-hud-scale--darken-hud-button-bg #token-hud .manage-player-targets.player-list {
-    background: rgba(0, 0, 0, 0.8);
+    font-size: var(--font-size-12);
 }

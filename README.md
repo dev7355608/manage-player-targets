@@ -5,8 +5,10 @@
 
 # Manage Player Targets (Foundry VTT Module)
 
-This module allows the GM to target tokens for their players.
+This module allows the GM to target tokens for their players in the Token HUD.
 
 ![demo](demo.gif)
+
+Left-click on the *Toggle Target State* button opens the palette where the target state for any user can be toggled. Right-click on the *Toggle Target State* button toggles the target state for the GM.
 
 These buttons toggle the target state of all controlled tokens unlike the core target button. This change of behavior allows the GM to target multiple tokens for their players at once.

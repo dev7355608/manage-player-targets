@@ -1,61 +1,41 @@
-#token-hud .manage-player-targets--player-list {
-    visibility: hidden;
-    position: absolute;
+#token-hud .palette[data-palette="manage-player-targets.targets"] {
     display: flex;
     flex-direction: column;
     width: auto;
-    min-width: 100px;
-    max-width: 200px;
+    min-width: 140px;
     padding: 3px;
     gap: 3px;
-    background: var(--color-cool-5-90);
-    box-shadow: 0 0 15px #000;
-    border: 1px solid var(--color-cool-4);
-    border-radius: 4px;
-    pointer-events: all;
-}
-
-#token-hud .col.left .manage-player-targets--player-list {
-    left: -8px;
-    transform: translate(-100%, 0);
-}
-
-#token-hud .col.right .manage-player-targets--player-list {
-    right: -8px;
-    transform: translate(100%, 0);
-}
-
-#token-hud .manage-player-targets--player-list.active {
-    visibility: visible;
-}
-
-#token-hud .manage-player-targets--player {
-    --button-text-color: #AAA;
-    --button-text-hover-color: #FFF;
-    --button-background-color: var(--color-cool-5-90);
-    --button-border-color: var(--color-cool-4);
-    box-sizing: border-box;
-    width: 100%;
-    background: transparent;
-}
-
-#token-hud .manage-player-targets--player.active {
-    box-shadow: unset;
-}
-
-#token-hud .manage-player-targets--player::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    width: var(--font-size-12);
-    height: var(--font-size-12);
-    background: var(--player-color);
-    border: 1px solid var(--player-border);
-    border-radius: 100%;
-}
-
-#token-hud .manage-player-targets--player-name {
-    flex: 1;
     text-align: left;
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-13);
+    color: var(--control-icon-color);
+
+    >a {
+        flex: 1;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        padding: 3px;
+        gap: 4px;
+        white-space: nowrap;
+
+        &::before {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            width: 1em;
+            height: 1em;
+            background: var(--user-color);
+            border: 1px solid var(--user-border);
+            border-radius: 100%;
+        }
+
+        &:hover {
+            color: var(--control-hover-icon-color);
+            border-color: var(--control-hover-border-color);
+        }
+
+        &.active {
+            color: var(--control-active-icon-color);
+            border-color: var(--control-active-border-color);
+        }
+    }
 }

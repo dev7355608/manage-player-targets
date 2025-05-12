@@ -66,7 +66,7 @@ export default {
 
             archive.pipe(output);
 
-            for (const name of ["module.json", "script.js", "script.js.map", "LICENSE"]) {
+            for (const name of ["module.json", "script.js", "script.js.map", "style.css", "LICENSE"]) {
                 archive.append(fs.createReadStream(name), { name });
             }
 

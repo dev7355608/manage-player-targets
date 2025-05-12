@@ -8,7 +8,7 @@ export default (TokenHUD) => class extends TokenHUD {
             "target": { handler: this.#onToggleTargetPalette, buttons: [0, 2] },
             "manage-player-targets.target": this.#onToggleTargetState,
         },
-    });
+    }, { inplace: false });
 
     /** @override */
     async _renderHTML(context, options) {

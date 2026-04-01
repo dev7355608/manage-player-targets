@@ -19,7 +19,8 @@ export default (TokenHUD) => class extends TokenHUD {
         div.classList.add("palette");
         div.dataset.palette = "manage-player-targets.targets";
 
-        const users = game.users.filter((user) => user.isSelf || user.active && user.viewedScene === canvas.scene?.id);
+        const users = game.users.filter((user) => user.isSelf || user.active && user.viewedScene === canvas.scene?.id
+            && (user.viewedLevel === canvas.level?.id || canvas.scene.levels.get(user.viewedLevel)?.visibility.levels.has(canvas.level.id)));
 
         users.sort((a, b) => a.name.localeCompare(b.name, game.i18n.lang));
 
